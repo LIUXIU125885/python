@@ -116,13 +116,49 @@
      break：终止循环，直接退出
      continue：跳过当次循环
      pass：占位
+     
+     for s in my_list :
+       print(s)
 
-### 1.7 列表
+### 1.7 序列
 
     my_list = []
-         
-     
-     
+    len(my_list) 获取列表my_list的长度     
+    my_list[1:4:1] 列表切片 
+    'key' in my_list 检查key是否在my_list
+    'key' not my_list
+    min(my_list) 获取my_list列表中最小值
+    max(my_list)
+    my_list.index('key',1,5) 获取key在my_lsit列表中的索引
+    my_list.count('key')  统计key在my_list中出现的次数 
+
+#### 1.7.1 列表（可变序列）
+   
+   del my_list[1] 删除指定索引元素
+   del my_list[0:2] 删除指定索引元素
+   my_list[0:2]=['aa','bb','cc']  替换插入元素
+   my_list[0:0] = ['aa','bb','cc'] 插入元素
+   my_list.append('key') 列表最后添加元素
+   my_list.insert(index,key) 向列表插入索引为insex的key
+   my_list.extend(list) 添加序列list到my_list中
+   my_list.clear() 清空序列
+   my_list.pop(index) 删除指定元素并返回被删除元素或者最后元素 
+   my_list.remove(key) 删除列表第一个指定元素
+   my_list.reverse() 反转列表
+   my_list.sort() 列表排序，默认升序排列  sort(reverse=true)降序
+   
+   range() 用于生成一个自然的序列 rang(起点,终点，步长)
+   for i in range(30):
+     print(i)
+   
     
+#### 1.7.2 字符串str（不可变序列）
+
+   序列是python中最基本的一种数据结构
+   数据结构是指计算机中数据存储的方式
+   
+#### 1.7.3 元组tuple（不可变序列）
+     
+### 1.8
 
          
