@@ -159,6 +159,77 @@
    
 #### 1.7.3 元组tuple（不可变序列）
      
-### 1.8
+   my_tuple = ()
+   
+   a,b,c,d = my_table  元组的解包 a,b =b,a交互a,b的值
+     
+     
+### 1.8 字典（dict）
+   
+   和列表类似，是一种新的数据结构，称为映射
+   
+   {'name':'张三','age':18}
+   dict(name='张三',age=15,sex='男')
+   dict([('name','张三'),('age',18)])
+   
+   len(xx)
+   in  检查字典中是否包含指定的键 
+   not in
+   
+   dict_name['key'] 获取值
+   dict_name.get('key','默认值')
+   dict_name.setdefault('key',value) 如果dict_name存在key则返回当前值，否则返回设定值
+   dict_name.update() 添加其他字典到dict_name,如果有重复的,则替换
+   del dict_name(key) 删除指定的键
+   dict_name.popitem() 删除最后一个，返回删除的键值元组
+   dict_name.pop(key) 根据指定的key删除键值对，返回当前值，不存在会报错，可以指定默认值
+   dict_name.clear() 清空字典
+   dict_name.copy() 对字典进行浅复制，字典里面的对象会直接复制地址id
+   
+   for key in dict_name.keys :
+      print(key, dict_name[key])
+   
+   for value in dict_name.values :
+     print(value)
+     
+   for k,v in dict_name.items :
+     print(k,'=',v)  
+     
 
-         
+### 1.9 集合（set）
+    
+    1.只能存储不可变对象
+    2.存储的对象是无序的
+    3.不能出现重复的元素，唯一性
+    
+    {1,2,3,4,5,6}
+    set_name = set() 创建一个空集合
+    len()
+    in
+    not in
+    set_name.add() 添加元素到集合
+    set_name.update()
+    set_name.pop() 随机删除并返回集合中的一个元素
+    set_name.remove(value) 删除指定的值
+    set_name.clear()
+    set_name.copy()
+    
+    集合运算
+     s1 & s2 交集运算&
+     s1 | s2 并集运算|
+     s1 - s2 差集运算-
+     s1 ^ s2 异或集合 ^  去掉相同的元素生成的集合
+     s1 <= s2 检查s1是不是s2的子集， s2是s1的超集 返回boolr类型
+     s1 < s2 检查s1是不是s2的真子集， s2有s1所有元素并有其没有的元素
+     s1 >= s2 检查s1是不是s2的超集
+     s1 > s2 检查s1是不是s2的真超集
+     
+
+ 
+### 1.10 函数
+ 
+   
+     
+ 
+    
+    
