@@ -258,7 +258,7 @@
     else:
         return n * jc(n-1)
 
-# print(jc(5))
+  print(jc(5))
 def power(n,i):
     '''幂运算'''
     # 基线条件
@@ -269,7 +269,7 @@ def power(n,i):
         return n*power(n,i-1)
 
 
-# print(power(6,2))
+ print(power(6,2))
 
 def hw(str):
     '''检查字符串是否是回文'''
@@ -302,4 +302,28 @@ print(hw('sssssssssssssadfdsssssssssss'))
       装饰器方法
        @装饰器方法
     
+### 1.11 面向对象（oop）
+   
+   class MyClass():
+      代码块
+   
+   mc = MyClass()
+   
+   isinstance()检查一个对象是不是对象的实例  insinstance(obj1, obj2)
+   
+   类定义方法必须默认接收一个参数,self
+   
+   魔术方法：
+   _init_(self) 默认调用方法
+   
+   class 类名([父类])：
+     公共属性...
+     def _init_(self,name):
+       self.name = name
+   
+   my = 类名（name）
+   
+   封装set，get
+   self.__name = name   隐藏属性，可通过p._类名__name访问
+   
     
