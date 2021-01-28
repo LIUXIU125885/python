@@ -228,8 +228,78 @@
  
 ### 1.10 函数
  
+   def 函数名（[参数]）：
+      代码块
    
-     
- 
+   函数名（） #调用
+   
+   位置参数fn（a,b）和关键字参数fn（a=5,b=6）,混合使用位置参数在前面
+   
+   不定长的参数fn(*a) 获取的a为元组接收所有的参数， 不定长参数后如果还有参数必须使用关键字传参
+   **a参数 会直接保存到a字典中
+   
+   help()可以查询某个函数的用法，可以展示出方法文档字符串（''' '''） def fn(a:int,b:str="hellow")->str """这是文档字符串"""
+   
+   作用域：
+   
+   局部作用域修改全局使用global 变量
+   
+   命名空间：
+    loacls() 获取当前命名空间中所有数据
+    globals() 获取全局命名空间
+    
+  递归：
+     def jc(n) :
+    '''阶乘递归'''
+    # 基线条件
+    if n == 1 :
+        return 1
+    # 递归条件
+    else:
+        return n * jc(n-1)
+
+# print(jc(5))
+def power(n,i):
+    '''幂运算'''
+    # 基线条件
+    if i == 1:
+        return  n
+    # 递归条件
+    else:
+        return n*power(n,i-1)
+
+
+# print(power(6,2))
+
+def hw(str):
+    '''检查字符串是否是回文'''
+    # 基线条件
+    if len(str) < 2:
+        return True
+    elif str[0] != str[-1]:
+        return False
+    # 递归条件
+    else:
+        return hw(str[1:-1])
+
+print(hw('sssssssssssssadfdsssssssssss'))
+
+
+  函数式编程：
+    
+    高阶函数：把函数作为参数传递
+      filter()过滤序列 filter(lambda a,b: a+b, value) 
+      map()可以对对象进行制定操作后返回 map(lambda i : i+1, value)
+      匿名函数 lambda 参数列表 ：返回值
+      l.sort(key=len), l.sort(key=int)
+      sorted()可以对任意序列进行排序，不会影响原来的对象; sort只能对列表排序
+      
+      闭包
+        1.函数嵌套
+        2.将内部函数作为返回值返回
+        3.内部函数使用到外部函数变量
+  
+      装饰器方法
+       @装饰器方法
     
     
