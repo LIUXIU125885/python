@@ -399,7 +399,14 @@ print(hw('sssssssssssssadfdsssssssssss'))
      os：操作系统模块，可对操作系统进行访问
         os.environ 获取系统的环境变量
         os.system()可以执行操作系统的指令
-     
+        os.listdir(path) 获取当去目录结构
+        os.getcwd()获取当前所在的目录
+        os.cgdir()切换目录
+        os.mkdie() 创建目录
+        os.rmdir()删除目录
+        os.remove()删除文件
+        os.rename('旧名字','新名字'）可以重命名或者剪切
+        
      pprint: 格式化输出
          
       
@@ -434,8 +441,43 @@ print(hw('sssssssssssssadfdsssssssssss'))
                    print('文件不存在')
               
           
-       2.file_obj.read() # 读取文件
+       2. 读取文件
+       file_obj.read()
+          例子：try:
+                   with open(file, encoding='utf-8') as file_obj: 
+                      chunk  = 100 
+                      while True:
+                        content = file_obj.read(chunk)
+                        if not content:
+                           break
+                except  FileNotFoundError :
+                   print('文件不存在')
+        file_obj.readline() 一行一行的读取文本内容
+        file_obj.readlines() 返回一行一行的文件列表
+        for t in file_obj: 返回一行一行的文件
+        
+        3.写入文件
+         file_obj.write 没有回创建文件，有就会截断文件，返回当前写入的字符长度
+          例子：try:
+                   with open(file, 'w', encoding='utf-8') as file_obj:  # 写入和覆盖以前文件
+                     file_obj.write('字符串')  
+                except  FileNotFoundError :
+                   print('文件不存在')
+          例子：try:
+                   with open(file, 'a', encoding='utf-8') as file_obj:  # 追加内容
+                     file_obj.write('字符串')  
+                except  FileNotFoundError :
+                   print('文件不存在')
+                   
+        r,w,a,r+,a+,w+,rb,ab,wb,x,
+        读取文本是以字符为单位
+        读取二进制以字节为单位
+        
+        file_obj.tell() 获取当前读取的位置
+        file_obj.seek() 指定读取的位置，后面读取将按这个位置往后读取，0从头计算；1从当前位置累加计算；2从最后开始计算
+        
        3.file.close() # 关闭文件
+       4.
     
     
     
