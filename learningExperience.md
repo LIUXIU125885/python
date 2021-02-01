@@ -326,4 +326,116 @@ print(hw('sssssssssssssadfdsssssssssss'))
    封装set，get
    self.__name = name   隐藏属性，可通过p._类名__name访问
    
+   @property 装饰器,获取name的属性1
+   def name():
+      return _name
+      
+   @name.setter 修改name的属性
+   def nmae(sele, nmae):
+   self._name = name
+   
+   
+   继承
+   class B:
+     def __init__:
+       self._name = name
+       代码块
+   class A（B）:
+      # B.__init__(self,nmae)
+      super().__init__(name):
+        self_name = name
+        
+    def __del__(self): 垃圾回收
+    
+    对象中的魔术方法：
+    print() -> 实际调用__str__()的返回值
+    __repr__(self,other) ->直接在交互模式中输出的结果
+    __lt__(self,other)小于
+    __le__(self,other)小于等于
+    __eq__(self,other)等于
+    __ne__(self,other)不等于
+    __gt__(self,other)大于
+    __ge__(self,other)大于等于
+    
+    例：def __gt__(self,other）：
+          return self.age > other.age
+          
+    __bool__(self) 可指定对象是否在某个条件
+    __len__() 获取对象的长度
+    
+    多态
+    例子：print(),len()
+    鸭子类型：如果一个东西走路像鸭子，叫声像鸭子，那么它就是鸭子
+    def say_hello(obj):
+      # if isinstance(obj,A):
+       print(obj.name)
+           
+      
+     
+### 1.11 模块化
+
+    1. import A   #使用时A.属性或方法
+      
+    2. form  A import person  #引入A模块的person
+       form A import *  # 引入了所有的方法和属性，容易造成两个模块的方法和属性被覆盖，可以添加_变量和_方法（），会只在模块中访问
+       
+    3.if __name__ == '__main__'  判断一个模块是否是__mian__模块
+    
+    
+    包（文件夹）
+    包中必须要有__init__.py文件，引入包会首先读取其内容
+    
+    
+    
+    python标准库：
+      
+      sys：可获取python解析器信息
+         sys.argv 获取控制台输入的参数
+         sys.modules 获取当前引入的所有模块
+         sys.path 他是一个列表，保存模块的搜索路径
+         sys.platform 返回当前系统的类型
+         sys.exit() 用于退出程序
+         
+     os：操作系统模块，可对操作系统进行访问
+        os.environ 获取系统的环境变量
+        os.system()可以执行操作系统的指令
+     
+     pprint: 格式化输出
+         
+      
+    异常处理：(try必须，else有无有都行，except和finally有一个)
+      try:
+        代码块（可能出现错误的代码）
+      except:
+        代码块(出现错误的处理方式)
+      except 异常类型 as 异常名:
+        代码块(出现错误的处理方式)  # Exception异常父类
+      except:
+        代码块(出现错误的处理方式)
+      else:
+        代码块（没出错执行的代码块）
+      finally:
+        代码块(总会执行的代码块)
+        
+     raise Exception() #抛出异常
+     raise myError() #抛出自定义异常
+        
+
+### 1.12 文件操作
+
+       1.open(file) # 打开文件
+         with open(file) as file_obj: #打开文件并赋值给file_obj,不用关闭文件，代码块结束后自动关闭
+           代码块
+          
+          例子：try:
+                   with open(file) as file_obj: 
+                      代码块   
+               except  FileNotFoundError :
+                   print('文件不存在')
+              
+          
+       2.file_obj.read() # 读取文件
+       3.file.close() # 关闭文件
+    
+    
     
